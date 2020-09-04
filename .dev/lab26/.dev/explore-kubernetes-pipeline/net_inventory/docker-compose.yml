@@ -1,0 +1,59 @@
+---
+version: '3'
+services:
+
+  netinv-db:
+    build:
+      context: . 
+      dockerfile: "Dockerfile_db"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    networks:
+      - "backend_network"
+
+  netinv_backend:
+    build:
+      context: . 
+      dockerfile: "Dockerfile_backend"
+    restart: always
+    environment:
+      ENV: "BACKEND"
+      SECRET_KEY: "${SECRET_KEY}"
+      SQLALCHEMY_DATABASE_URI: "${SQLALCHEMY_DATABASE_URI}"
+    volumes:
+      - .:/app
+    ports:
+     - "5001:5001"
+    depends_on:
+      - "netinv-db"
+    networks:
+      - "backend_network"
+      - "frontend_network"
+       
+  netinv_frontend:
+    build:
+      context: . 
+      dockerfile: "Dockerfile_frontend"
+    ports:
+      - "5000:5000"
+    restart: always
+    environment:
+      ENV: "FRONTEND"
+      URL: "http://netinv_backend:5001"
+    volumes:
+      - .:/app
+    depends_on:
+      - "netinv_backend"
+    networks:
+      - "frontend_network"
+ 
+networks:
+    backend_network:
+      driver: "bridge"
+    frontend_network:
+      driver: "bridge"

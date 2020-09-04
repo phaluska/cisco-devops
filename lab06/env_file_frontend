@@ -1,0 +1,2 @@
+ENV=FRONTEND
+URL=http://netinv_backend:5001

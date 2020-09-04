@@ -1,0 +1,2 @@
+ENV=FRONTEND
+URL=http://test_backend:5001

@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: net-inventory
+  name: netinv-frontend
+spec:
+  ports:
+    - port: 5100
+      nodePort: 30500
+      targetPort: 5000
+  selector:
+    app: net-inventory
+    tier: netinv-frontend
+  type: LoadBalancer
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: netinv-frontend
+  labels:
+    app: net-inventory
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/app"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: net-inventory 
+  name: netinv-frontend-claim0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi 
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netinv-frontend
+  labels:
+    app: net-inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-inventory
+      tier: netinv-frontend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: net-inventory
+        tier: netinv-frontend
+    spec:
+      containers:
+      - env:
+        - name: ENV
+          value: FRONTEND
+        - name: URL
+          value: http://netinv-backend:5001
+        image: cisco-devops/net_inventory/net_inventory_frontend:master
+        name: netinv-frontend
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - mountPath: /app
+          name: netinv-frontend-claim0
+      restartPolicy: Always
+      volumes:
+      - name: netinv-frontend-claim0
+        persistentVolumeClaim:
+          claimName: netinv-frontend-claim0

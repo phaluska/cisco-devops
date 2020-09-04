@@ -1,0 +1,4 @@
+resources:
+  - netinv_db.yaml
+  - netinv_backend.yaml
+  - netinv_frontend.yaml

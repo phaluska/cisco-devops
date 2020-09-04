@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: netinv-backend
+  labels:
+    app: net-inventory
+spec:
+  ports:
+    - port: 5001
+      targetPort: 5001
+      nodePort: 30501
+  selector:
+    app: net-inventory
+    tier: netinv-backend
+  type: LoadBalancer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: netinv-backend
+  labels:
+    app: net-inventory
+    type: local
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/app"
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: netinv-backend-claim
+  labels:
+    app: net-inventory
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netinv-backend
+  labels:
+    app: net-inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-inventory
+      tier: netinv-backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: net-inventory
+        tier: netinv-backend
+    spec:
+      containers:
+      - env:
+        - name: ENV
+          value: BACKEND
+        - name: SECRET_KEY
+          # value: 1234QWer
+         valueFrom:
+           secretKeyRef:
+             name: net-inventory
+             key: secret-key 
+        - name: SQLALCHEMY_DATABASE_URI
+          # value: 'postgresql+psycopg2://root:Cisco123@netinv-db/net_inventory'
+          #value: sqlite:///database.db
+         valueFrom:
+           secretKeyRef:
+             name: net-inventory
+             key: sqlalchemy-database-uri
+              
+        image: cisco-devops/net_inventory/net_inventory_backend:master
+        name: netinv-backend
+        ports:
+        - containerPort: 5001
+        volumeMounts:
+        - mountPath: /app
+          name: netinv-backend-claim0
+      restartPolicy: Always
+      volumes:
+      - name: netinv-backend-claim0
+        persistentVolumeClaim:
+          claimName: netinv-backend-claim

@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-inventory
+  labels:
+    app: net-inventory
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-inventory
+  template:
+    metadata:
+      labels:
+        app: net-inventory
+    spec:
+      containers:
+        - name: net-inventory-frontend
+          image: cisco-devops/containers/net_inventory_frontend
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+        - name: net-inventory-backend
+          image: cisco-devops/containers/net_inventory_backend
+          imagePulPolicy: Always
+          ports:
+            - containerPort: 5001
+          env:
+            - name: ENV
+              value: BACKEND
+            - name: SECRET_KEY
+              value: "${SECRET_KEY}"
+            - name: SQLALCHEMY_DATABASE_URI
+              value: "${SQLALCHEMY_DATABASE_URI}"
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: net-inventory
+  name: net-inventory
+spec:
+  ports:
+  - nodePort: 30500
+    port: 5100
+    targetPort: 5000
+  selector:
+    app: net-inventory
+  type: NodePort
+

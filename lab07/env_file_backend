@@ -1,0 +1,3 @@
+ENV=BACKEND
+SECRET_KEY=aj8j6PIbaJpJXBS8jjvcylT84G+1UhxjXQFz6pJPNuQ=
+SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://root:Cisco123@test_db/net_inventory

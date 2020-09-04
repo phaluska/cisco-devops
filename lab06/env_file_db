@@ -1,0 +1,4 @@
+POSTGRES_DB=net_inventory
+POSTGRES_USER=root
+POSTGRES_PASSWORD=Cisco123
+PGDATA=/var/lib/postgresql/data/pgdata

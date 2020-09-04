@@ -1,0 +1,1000 @@
+ 1025  git commit -m "ADD APPLICATION DEPLOYMENT STEP"
+ 1026  git push origin deployapp 
+ 1027  vi t
+ 1028  git checkout master
+ 1029  git push -f origin master
+ 1030  git log
+ 1031  cd ../..
+ 1032  cd lab09/
+ 1033  ls
+ 1034  git clone https://git.lab/cisco-devops/net_inventory
+ 1035  cd net_inventory/
+ 1036  ls
+ 1037  git log
+ 1038  git reset 554e2a03ea1586b8a199feb5e7d12f63e98c07ff
+ 1039  git stash -u
+ 1040  git push -f origin master
+ 1041  cd ..
+ 1042  rm -rf net_inventory/
+ 1043  git clone https://git.lab/cisco-devops/net_inventory
+ 1044  cd net_inventory/
+ 1045  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1046  docker images
+ 1047  docker container ls 
+ 1048  docker container ls -a
+ 1049  docker container rm -f test_frontend
+ 1050  docker container rm -f test_backend
+ 1051  docker container rm -f test_db
+ 1052  docker images
+ 1053  docker rmi 78e52ad2a9b0
+ 1054  docker rmi 9f84a4383190
+ 1055  docker rmi d672dec6d71a
+ 1056  docker images
+ 1057  docker rmi net_inventory_netinv_frontend
+ 1058  docker rmi net_inventory_netinv_backend
+ 1059  docker rmi net_inventory_netinv_db
+ 1060  docker images
+ 1061  docker rmi -f 944c813249d5
+ 1062  docker rmi -f 673800b9bdd7
+ 1063  docker rmi 9a69a5fdf813
+ 1064  docker rmi 14cd14af9f89
+ 1065  docker rmi -f 9a31afeec0dd
+ 1066  docker imges
+ 1067  docker images
+ 1068  docker rmi edcd8d621f6b
+ 1069  docker rmi 4f29e9c15e8d
+ 1070  docker images
+ 1071  docker rmi 14cd14af9f89
+ 1072  docker container ls -a
+ 1073  docker container rm -f test_lint
+ 1074  docker rmi 14cd14af9f89
+ 1075  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1076  ls
+ 1077  vi requirements.txt 
+ 1078  docker images
+ 1079  docker container rm -f test_lint
+ 1080  docker rmi 14cd14af9f89
+ 1081  vi Dockerfile 
+ 1082  docker build -t py37 .
+ 1083  docker tag py37 registry.git.lab/cisco-devops/containers/python37:latest
+ 1084  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1085  docker images
+ 1086  docker rmi -f 7d8948b4b6aa
+ 1087  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1088  vi .pylintrc 
+ 1089  vi Dockerfile
+ 1090  docker build -t py37 .
+ 1091  docker tag py37 registry.git.lab/cisco-devops/containers/python37:latest
+ 1092  vi Dockerfile
+ 1093  docker build -t py37 .
+ 1094  docker images
+ 1095  docker container ls -a
+ 1096  docker container rm -f happy_wilbur
+ 1097  docker container rm -f test_lint
+ 1098  docker images
+ 1099  docker rmi -f 7d8948b4b6aa
+ 1100  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1101  ls
+ 1102  vi Dockerfile
+ 1103  docker images
+ 1104  docker tag py37 registry.git.lab/cisco-devops/containers/python37:latest
+ 1105  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1106  docker images
+ 1107  docker rmi -f 6d319e0d3165
+ 1108  docker rmi -f 7d8948b4b6aa
+ 1109  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1110  docker container ls -a
+ 1111  docker rm -f test_lint
+ 1112  docker images
+ 1113  docker run -it --name test_lint -v ${PWD}:/app registry.git.lab/cisco-devops/containers/python37:latest sh 
+ 1114  vi .pylintrc 
+ 1115  vi net_inventory/__init__.py 
+ 1116  vi .gitlab-ci.yml 
+ 1117  docker exec -it test_lint sh
+ 1118  docker start test_lint
+ 1119  docker exec -it test_lint sh
+ 1120  ls
+ 1121  vi pyproject.toml 
+ 1122  docker exec -it test_lint sh
+ 1123  vi net_inventory/backend/api.py
+ 1124  vi .pylintrc 
+ 1125  cd ../../
+ 1126  cd -
+ 1127  vi net_inventory/backend/api.py
+ 1128  git status
+ 1129  docker exec -it test_lint sh
+ 1130  vi requirements.txt 
+ 1131  vi Dockerfile
+ 1132  vi requirements.txt 
+ 1133  git status
+ 1134  rm Dockerfile
+ 1135  vi tests/test_routes.py 
+ 1136  git status
+ 1137  git add requirements.txt 
+ 1138  git branch
+ 1139  git checkout -b lab09_begin
+ 1140  git status
+ 1141  git diff net_inventory/backend/api.py
+ 1142  git add net_inventory/backend/api.py
+ 1143  git add tests/test_routes.py
+ 1144  git status
+ 1145  git stash -u
+ 1146  git status
+ 1147  git log
+ 1148  git diff
+ 1149  git reset e8c011e93d88e17ee83dde67bf0bf8f145fa8227
+ 1150  git status
+ 1151  vi tests/test_routes.py 
+ 1152  vi requirements.txt 
+ 1153  git status
+ 1154  vi net_inventory/backend/api.py 
+ 1155  git status
+ 1156  git diff
+ 1157  vi .gitlab-ci.yml 
+ 1158  git diff
+ 1159  vi .gitlab-ci.yml 
+ 1160  git diff
+ 1161  git add -A
+ 1162  git commit -m 'update gitlab and add lint files'
+ 1163  git status
+ 1164  git push origin lab09_begin
+ 1165  git merge master
+ 1166  git status
+ 1167  vi .gitlab-ci.yml 
+ 1168  git status
+ 1169  git add -A
+ 1170  git abort
+ 1171  cp requirements.txt ../
+ 1172  cp tests/test_routes.py ../
+ 1173  cp net_inventory/backend/api.py ../
+ 1174  git checkout master
+ 1175  git status
+ 1176  git branch remote lab09_begin
+ 1177  git status
+ 1178  cp ../requirements.txt ./
+ 1179  cp ../test_routes.py tests/
+ 1180  cp ../api.py net_inventory/backend/
+ 1181  ls
+ 1182  git status
+ 1183  vi .gitlab-ci.yml 
+ 1184  git status
+ 1185  git branch
+ 1186  git branch --help
+ 1187  git branch -d lab09_begin
+ 1188  git branch -D lab09_begin
+ 1189  git checkout -b lab09_begin
+ 1190  git status
+ 1191  git stash -u
+ 1192  git status
+ 1193  git log
+ 1194  git reset e8c011e93d88e17ee83dde67bf0bf8f145fa8227
+ 1195  git status
+ 1196  git diff .gitlab-ci.yml
+ 1197  vi .gitlab-ci.yml 
+ 1198  git diff .gitlab-ci.yml
+ 1199  cp ../requirements.txt ./
+ 1200  cp ../test_routes.py tests/test_routes.py 
+ 1201  cp ../api.py net_inventory/backend/
+ 1202  git status
+ 1203  git diff
+ 1204  git add -A
+ 1205  git commit -m 'update gitlab and add lint files'
+ 1206  git status
+ 1207  git checkout -b lab09_end
+ 1208  docker exec -it test_lint sh
+ 1209  vi .pylintrc 
+ 1210  docker exec -it test_lint sh
+ 1211  vi net_inventory/__init__.py 
+ 1212  docker exec -it test_lint sh
+ 1213  git status
+ 1214  git stash -u
+ 1215  git checkout lab09_begin
+ 1216  git status
+ 1217  git log
+ 1218  git reset e8c011e93d88e17ee83dde67bf0bf8f145fa8227
+ 1219  git status
+ 1220  vi pytest.ini 
+ 1221  git stash -u
+ 1222  git status
+ 1223  git log
+ 1224  git branch
+ 1225  git checkout lab09_end
+ 1226  git status
+ 1227  git log
+ 1228  git branch -d lab09_begin
+ 1229  git checkout -b lab09_begin
+ 1230  docker exec -it test_lint sh
+ 1231  vi tests/test_routes.py 
+ 1232  git status
+ 1233  git checkout -b hold
+ 1234  git checkout lab09_begin
+ 1235  git status
+ 1236  git log
+ 1237  git reset e8c011e93d88e17ee83dde67bf0bf8f145fa8227
+ 1238  vi tests/test_routes.py 
+ 1239  git diff
+ 1240  git add -A
+ 1241  git commit -m 'update gitlab and add lint files'
+ 1242  git status
+ 1243  git checkout lab09_end
+ 1244  docker exec -it test_lint sh
+ 1245  git checkout lab09_begin
+ 1246  git branch -d lab09_end
+ 1247  git branch -D lab09_end
+ 1248  git checkout -b lab09_end
+ 1249  docker exec -it test_lint sh
+ 1250  vi .pylintrc 
+ 1251  vi net_inventory/__init__.py 
+ 1252  docker exec -it test_lint sh
+ 1253  vi tests/test_routes.py 
+ 1254  docker exec -it test_lint sh
+ 1255  git status
+ 1256  git diff
+ 1257  vi .pylintrc 
+ 1258  git status
+ 1259  vi .gitlab-ci.yml 
+ 1260  git status
+ 1261  git add -A "Add testing"
+ 1262  git add -A
+ 1263  git commit -m "Add testing"
+ 1264  git checkout master
+ 1265  git merge lab09_begin --no-commit --no-ff
+ 1266  git log
+ 1267  git reset e8c011e93d88e17ee83dde67bf0bf8f145fa8227
+ 1268  git stash -u
+ 1269  git status
+ 1270  git log
+ 1271  git merge lab09_begin --no-commit --no-ff
+ 1272  git status
+ 1273  git log
+ 1274  git stash -u
+ 1275  git status
+ 1276  git merge lab09_begin --no-ff
+ 1277  git log
+ 1278  git stash -u
+ 1279  git checkout lab09_end
+ 1280  git branch -d master
+ 1281  git checkout -b master
+ 1282  git status
+ 1283  git log
+ 1284  git push origin lab09_begin
+ 1285  git status
+ 1286  git push origin lab09_begin
+ 1287  git push origin lab09_end 
+ 1288  git status
+ 1289  git log
+ 1290  git reset d4509b2e9fc161d9487a2de2aa394c5e74afeec4
+ 1291  git status
+ 1292  git stash -u
+ 1293  git push -f origin master
+ 1294  git status
+ 1295  git merge lab09_end --no-ff
+ 1296  git status
+ 1297  git log
+ 1298  git diff f4962fa20dcdc4abaa2d775d4f8894f9fad1b64c
+ 1299  git reset f4962fa20dcdc4abaa2d775d4f8894f9fad1b64c
+ 1300  git status
+ 1301  git log
+ 1302  git push origin lab09_begin
+ 1303  git push origin lab09_end
+ 1304  git fetch origin lab10_begin
+ 1305  git checkout lab10_begin
+ 1306  git log
+ 1307  git diffc117d97ae5d7c26472eeb405eb818a8e62d5483a
+ 1308  git diff c117d97ae5d7c26472eeb405eb818a8e62d5483a
+ 1309  cp .gitlab-ci.yml ../
+ 1310  cp docker-compose.yml ../
+ 1311  git checkout master
+ 1312  cp ../.gitlab-ci.yml ./
+ 1313  git diff
+ 1314  git stash -u
+ 1315  vi .gitlab-ci.yml 
+ 1316  git diff
+ 1317  vi ../docker-compose.yml 
+ 1318  vi docker-compose.yml 
+ 1319  git diff
+ 1320  vi ../docker-compose.yml 
+ 1321  vi docker-compose.yml 
+ 1322  git status
+ 1323  git diff
+ 1324  git add -A
+ 1325  git commit -m 'add health check commented out'
+ 1326  git checkout -b lab10_begin
+ 1327  git branch -d lab10_begin
+ 1328  git branch -D lab10_begin
+ 1329  git checkout -b lab10_begin
+ 1330  git checkout master
+ 1331  git status
+ 1332  vi .gitlab-ci.yml 
+ 1333  vi docker-compose.yml 
+ 1334  git status
+ 1335  git diff
+ 1336  git add -A
+ 1337  git commit -m 'add health check'
+ 1338  git checkout -b lab10_end
+ 1339  git push origin lab10_begin
+ 1340  git push origin lab10_end
+ 1341  git checkout master
+ 1342  git log
+ 1343  git reset 6316864f6935461cbc9d55a2f7685c442187087b
+ 1344  git status
+ 1345  git diff
+ 1346  git stash -u
+ 1347  git push -f origin master
+ 1348  history | grep no-ff
+ 1349  git merge lab10_end --no-ff
+ 1350  git status
+ 1351  git log
+ 1352  git reset eb32090a5ac908f9ce95b79bd8a8948a94780102
+ 1353  git status
+ 1354  git log
+ 1355  cd ../..
+ 1356  ls
+ 1357  cd lab10/
+ 1358  ls
+ 1359  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1360  git clone https://git.lab/cisco-devops/net_inventory  
+ 1361  cd net_inventory/
+ 1362  git log
+ 1363  git pull origin lab10_end
+ 1364  git log
+ 1365  git diff 6316864f6935461cbc9d55a2f7685c442187087b
+ 1366  ssh k8s3
+ 1367  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1368  ls
+ 1369  vi .gitlab-ci.yml 
+ 1370  vi requirements.txt 
+ 1371  vi .gitlab-ci.yml 
+ 1372  ssh k8s3
+ 1373  ssh student@asa1
+ 1374  ssh cisco@asa1
+ 1375  ssh k8s3
+ 1376  ssh cisco@asa1
+ 1377  ssh k8s3
+ 1378  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1379  git branch
+ 1380  git log
+ 1381  docker push registry.git.lab/cisco-devops/containers/python37:latest
+ 1382  git push -f origin master
+ 1383  git checkout -b lab10_end
+ 1384  git checkout -b lab10_begin
+ 1385  git log
+ 1386  git reset 6316864f6935461cbc9d55a2f7685c442187087b
+ 1387  git stash -u
+ 1388  git checkout -b lab09_end
+ 1389  git log
+ 1390  git reset f4962fa20dcdc4abaa2d775d4f8894f9fad1b64c
+ 1391  git status
+ 1392  git stash -u
+ 1393  git log
+ 1394  git checkout -b lab09_begin
+ 1395  git reset d4509b2e9fc161d9487a2de2aa394c5e74afeec4
+ 1396  git status
+ 1397  git stash -u
+ 1398  git status
+ 1399  git branch
+ 1400  git push origin lab09_begin
+ 1401  git push origin lab09_end
+ 1402  git push origin lab10_begin
+ 1403  git push origin lab10_end
+ 1404  vi requirements.txt 
+ 1405  ssh git.lab
+ 1406  ping git.lab
+ 1407  ssh git.lab
+ 1408  cd labs/lab14/
+ 1409  cd net_inventory_iac/
+ 1410  git pull origin lab14
+ 1411  cd ..
+ 1412  cd ../lab15/net_inventory_iac/iac/ansible/
+ 1413  ls -l
+ 1414  rm terraform.tfstate 
+ 1415  ansible-playbook -i hosts routers_check.yml 
+ 1416  cd ..
+ 1417  cd net_inventory_iac/
+ 1418  cat .gitlab-ci.yml 
+ 1419  git status
+ 1420  git rm iac/ansible/terraform.tfstate
+ 1421  nano .gitlab-ci.yml 
+ 1422  git status
+ 1423  git add .gitlab-ci.yml 
+ 1424  git status
+ 1425  git commit -m "Lab15 tests"
+ 1426  git status
+ 1427  git push origin lab15 
+ 1428  ssh 10.99.0.101
+ 1429  ssh-keygen -f "/home/student/.ssh/known_hosts" -R "10.99.0.101"
+ 1430  ssh 10.99.0.101
+ 1431  ssh cisco@10.99.0.101
+ 1432  cat iac/ansible/vars/csr1kv1/interfaces.yml 
+ 1433  nano .gitlab-ci.yml 
+ 1434  git status
+ 1435  git add .gitlab-ci.yml 
+ 1436  git commit -m "Lab15 testing"
+ 1437  git status
+ 1438  git push origin lab15 
+ 1439  git pull origin lab15
+ 1440  nano .gitlab-ci.yml 
+ 1441  git status
+ 1442  ls -la
+ 1443  git add .gitlab-ci.yml 
+ 1444  git commit -m "Lab15 testing"
+ 1445  cat .gitlab-ci.yml 
+ 1446  git push origin lab15 
+ 1447  exit
+ 1448  code labs/lab14/net_inventory_iac/iac/ansible/
+ 1449  cd labs/lab13/
+ 1450  ansible-playbook servers.yml 
+ 1451  cp ../lab14/net_inventory_iac/iac/ansible/files_for_remote_hosts/ ./
+ 1452  cp ../lab14/net_inventory_iac/iac/ansible/files_for_remote_hosts/ ./ -r
+ 1453  ansible-playbook servers.yml 
+ 1454  exit
+ 1455  cd labs/
+ 1456  find ./ | grep yml
+ 1457  vi ./lab15/net_inventory_iac/net_inventory/backend/spec/create_device.yml
+ 1458  python
+ 1459  exit
+ 1460  docker network ls
+ 1461  docker network rm my_custom_bridge
+ 1462  docker network rm my_custom_macvlan
+ 1463  docker network rm a5e456c5baf1
+ 1464  docker network rm services_bridge
+ 1465  docker network rm test_bridge
+ 1466  python
+ 1467  ls
+ 1468  vi populate_inventory.py
+ 1469  python populate_inventory.py k8s1:5001
+ 1470  vi populate_inventory.py
+ 1471  python populate_inventory.py k8s1:5001
+ 1472  vi populate_inventory.py
+ 1473  python populate_inventory.py k8s1:5001
+ 1474  vi populate_inventory.py
+ 1475  python populate_inventory.py k8s1:5001
+ 1476  printenv | grep PATH
+ 1477  ls -alh /home/student/.local/bin
+ 1478  cd /home/student/.local/bin
+ 1479  mv ~/populate_inventory.py ./
+ 1480  vi populate_inventory.py 
+ 1481  mv populate_inventory.py populate_inventory
+ 1482  chmod 775 populate_inventory 
+ 1483  cd ~/
+ 1484  ls 
+ 1485  populate_inventory k8s1:5001
+ 1486  populate_inventory
+ 1487  vi ~/.local/bin/populate_inventory 
+ 1488  populate_inventory
+ 1489  cd labs/
+ 1490  find ./ | grep docker-compos
+ 1491  vi ./lab06/docker-compose.yml
+ 1492  find ./ | grep env_file_frontend
+ 1493  vi ./lab07/env_file_frontend
+ 1494  vi ./lab06/env_file_frontend 
+ 1495  docker network ls
+ 1496  docker network rm net_inventory_backend_network
+ 1497  docker network rm net_inventory_default
+ 1498  docker network rm net_frontend_network
+ 1499  docker network ls
+ 1500  docker network rm net_inventory_frontend_network
+ 1501  docker network ls
+ 1502  cd -
+ 1503  cd ~/.local/bin
+ 1504  vi populate_inventory 
+ 1505  cd -
+ 1506  populate_inventory
+ 1507  ls
+ 1508  cd labs/lab19/
+ 1509  ls
+ 1510  cd net_inventory/
+ 1511  grep -R redirec
+ 1512  vi run.py 
+ 1513  git status
+ 1514  git diff
+ 1515  vi run.py 
+ 1516  vi net-inventory-config.yml 
+ 1517  code labs/lab16/
+ 1518  cd labs/lab19
+ 1519  ll
+ 1520  cd net_inventory/
+ 1521  ll
+ 1522  cd net_inventory/
+ 1523  ll
+ 1524  cd ..
+ 1525  cat net-inventory-config.yml
+ 1526  vi app.py 
+ 1527  pwd
+ 1528  populate_inventory 
+ 1529  which populate_inventory 
+ 1530  cd labs/
+ 1531  clear
+ 1532  ls
+ 1533  cd .dev/
+ 1534  ls
+ 1535  cd lab26/
+ 1536  ls
+ 1537  clear
+ 1538  ls
+ 1539  ls -lthr
+ 1540  cd ..
+ 1541  ls
+ 1542  cd lab26/
+ 1543  ls
+ 1544  ls -lthr
+ 1545  cd ..
+ 1546  ls
+ 1547  cd ..
+ 1548  ls
+ 1549  cd .dev/
+ 1550  ls
+ 1551  cd lab26/
+ 1552  l;s
+ 1553  ls
+ 1554  exit
+ 1555  open vnc://172.17.70.20:6160
+ 1556  ping gitlab
+ 1557  cd labs/
+ 1558  cd .dev/
+ 1559  ls
+ 1560  tree simple-k8s-app/
+ 1561  cd ..
+ 1562  ls
+ 1563  ping gitlab
+ 1564  ls
+ 1565  cd labs/
+ 1566  ls
+ 1567  ls -lthr
+ 1568  cd .dev/
+ 1569  ls
+ 1570  cd lab26/
+ 1571  ls
+ 1572  cd simpl
+ 1573  clear
+ 1574  ssh -Lclear
+ 1575  exit
+ 1576  ll
+ 1577  cd labs
+ 1578  cd lab19
+ 1579  ll
+ 1580  cd net_inventory/
+ 1581  ll
+ 1582  vi run.py
+ 1583  vi app.py
+ 1584  ll
+ 1585  export CI_REGISTRY_PASSWORD=1234QWer
+ 1586  export CI_REGISTRY_USER=student
+ 1587  export POSTGRES_DB=net_inventory
+ 1588  export POSTGRES_PASSWORD=Cisco123
+ 1589  export POSTGRES_USER=root
+ 1590  export SECRET_KEY=aj8j6PIbaJpJXB
+ 1591  export SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://root:Cisco123@netinv_db/net_inventory
+ 1592  docker-compose up -d --force-recreate --build
+ 1593  docker container ls
+ 1594  ll
+ 1595  vi Dockerfile_frontend 
+ 1596  vi Dockerfile_backend 
+ 1597  ll
+ 1598  cd net_inventory/
+ 1599  cd ..
+ 1600  ll
+ 1601  docker container ls
+ 1602  docker logs net_inventory_netinv_frontend_1
+ 1603  docker logs net_inventory_netinv_backend_1
+ 1604  vi app.py
+ 1605  ls
+ 1606  cd net_inventory/
+ 1607  ll
+ 1608  cd frontend/
+ 1609  ll
+ 1610  vi views.py 
+ 1611  python
+ 1612  ll
+ 1613  vi views.py 
+ 1614  docker-compose down
+ 1615  docker-compose up --force-recreate --build
+ 1616  vi views.py 
+ 1617  docker-compose up --force-recreate --build
+ 1618  vi views.py 
+ 1619  docker-compose up --force-recreate --build
+ 1620  vi views.py 
+ 1621  docker-compose up --force-recreate --build
+ 1622  vi views.py 
+ 1623  cd ..
+ 1624  cd shared
+ 1625  ll
+ 1626  vi setup.py 
+ 1627  docker-compose up --force-recreate --build
+ 1628  vi setup.py 
+ 1629  docker-compose up --force-recreate --build
+ 1630  vi setup.py 
+ 1631  cd ..
+ 1632  cd frontend/
+ 1633  ls
+ 1634  vi views.py
+ 1635  docker-compose up --force-recreate --build
+ 1636  vi views.py
+ 1637  docker-compose up --force-recreate --build
+ 1638  vi views.py
+ 1639  cd ..
+ 1640  ll
+ 1641  cd shared
+ 1642  ll
+ 1643  cd setup.py
+ 1644  vi setup.py 
+ 1645  docker-compose up --force-recreate --build
+ 1646  vi setup.py 
+ 1647  docker-compose up --force-recreate --build
+ 1648  vi setup.py 
+ 1649  docker-compose up --force-recreate --build
+ 1650  vi setup.py 
+ 1651  docker-compose up --force-recreate --build
+ 1652  vi setup.py 
+ 1653  cd ..
+ 1654  ll
+ 1655  ls
+ 1656  cd frontend/
+ 1657  ll
+ 1658  vi views.py
+ 1659  docker-compose up --force-recreate --build
+ 1660  df -h
+ 1661  docker image ls
+ 1662  docker container ls
+ 1663  docker image rmi eb46f6e8e5ef
+ 1664  docker image rmi 9c8e50012948
+ 1665  docker image rmi 343c61be6bb4
+ 1666  docker image ls
+ 1667  docker image rmi c6a9dc5c2df3
+ 1668  docker image rmi 79fe72c7ed64
+ 1669  docker container stop 4f5fee5528d9
+ 1670  docker container stop 594ede1b90e6
+ 1671  docker image rmi c6a9dc5c2df3
+ 1672  docker image rmi c6a9dc5c2df3 --force
+ 1673  docker image rmi c6a9dc5c2df3
+ 1674  docker image ls
+ 1675  docker image rmi 79fe72c7ed64
+ 1676  docker image rmi 79fe72c7ed64 --force
+ 1677  docker-compose down
+ 1678  docker image ls
+ 1679  docker image rmi f4b31ab19aad
+ 1680  docker image rmi 4dcf3f556a2d
+ 1681  docker image rmi e82db457f701
+ 1682  docker image ls
+ 1683  docker image rmi 7260047a60d9
+ 1684  docker image rmi b0eace7ca5c8
+ 1685  docker image rmi bef462dc4445
+ 1686  docker image rmi f9edc1c89458
+ 1687  docker image rmi 4d06a555b414
+ 1688  docker image rmi 0d2f3a1018ab
+ 1689  docker image ls
+ 1690  df -h
+ 1691  docker image rmi 22ac774fd4ac
+ 1692  docker image rmi fe0825d521c3
+ 1693  docker image rmi 910bc1163b7a
+ 1694  docker image ls
+ 1695  docker image rmi 7d851bc46d22
+ 1696  docker image rmi 3de1335db720
+ 1697  docker image rmi 41702231033b
+ 1698  docker image rmi 7cf87c6f9cde
+ 1699  docker image rmi 87fe23af464b
+ 1700  docker image rmi e2e5307a1319
+ 1701  docker image l
+ 1702  docker image ls
+ 1703  docker image rmi 0cd0377aaf5d
+ 1704  docker image rmi a70c723d908b
+ 1705  docker image rmi 3732137e7325
+ 1706  docker image rmi d6cd2fd0b37c
+ 1707  docker image rmi c38db1ceeeea
+ 1708  docker image ls
+ 1709  df -h
+ 1710  du -h --max-depth=1 / | grep '[0-9]G\>'
+ 1711  sudo du -h --max-depth=1 / | grep '[0-9]G\>'
+ 1712  ls /
+ 1713  sudo du -h --max-depth=1 /home | grep '[0-9]G\>'
+ 1714  sudo du -h --max-depth=1 /home/student | grep '[0-9]G\>'
+ 1715  ls /home/student
+ 1716  ll /home/student
+ 1717  sudo du -h --max-depth=1 /home/student/Desktop | grep '[0-9]G\>'
+ 1718  sudo du -h --max-depth=1 /home/student/Desktop/VM\ Images/ | grep '[0-9]G\>'
+ 1719  sudo du -h --max-depth=1 /var | grep '[0-9]G\>'
+ 1720  sudo du -h --max-depth=1 /var/log | grep '[0-9]G\>'
+ 1721  cd /var/log
+ 1722  ll
+ 1723  ll -H 
+ 1724  ll -h
+ 1725  cd journal/
+ 1726  ll
+ 1727  cd 9058180717534281837070b654809235/
+ 1728  ll
+ 1729  ll -h
+ 1730  cd ~/labs/lab19
+ 1731  ll
+ 1732  cd net_inventory/
+ 1733  ll
+ 1734  vi app.py
+ 1735  docker-compose up --force-recreate --build
+ 1736  ll
+ 1737  cdd net_inventory/
+ 1738  ll
+ 1739  cd net_inventory/
+ 1740  ll
+ 1741  cd frontend/
+ 1742  vi views.py 
+ 1743  docker-compose up --force-recreate --build
+ 1744  cd ..
+ 1745  cd shared/
+ 1746  ll
+ 1747  vi setup.py 
+ 1748  cd ..
+ 1749  ls
+ 1750  cd frontend/
+ 1751  ls
+ 1752  vi __init__.py 
+ 1753  cd ..
+ 1754  ll
+ 1755  cd ..
+ 1756  ll
+ 1757  vi app.py
+ 1758  cd net_inventory/
+ 1759  ls
+ 1760  cd frontend/
+ 1761  ll
+ 1762  vi views.py 
+ 1763  cd ..
+ 1764  ll
+ 1765  cd ..
+ 1766  ls
+ 1767  vi app.py
+ 1768  docker-compose up --force-recreate --build
+ 1769  vi app.py
+ 1770  docker-compose up --force-recreate --build
+ 1771  vi app.py
+ 1772  docker-compose up --force-recreate --build
+ 1773  vi run.py 
+ 1774  vi app.py
+ 1775  docker-compose up --force-recreate --build
+ 1776  vi app.py 
+ 1777  docker-compose up --force-recreate --build
+ 1778  docker image ls
+ 1779  docker image rmi 
+ 1780  docker image rmi ae818e0942a8
+ 1781  docker image rmi 301d6fa651a0 ae87304cb7d9 1d5011f301f9
+ 1782  docker-compose 
+ 1783  vi net-inventory-config.yml 
+ 1784  docker-compose up --force-recreate --build
+ 1785  vi app.py 
+ 1786  docker-compose up --force-recreate --build
+ 1787  ll
+ 1788  cd ..
+ 1789  cd lab17
+ 1790  ll
+ 1791  cd playbooks/
+ 1792  ll
+ 1793  cd ..
+ 1794  cd lab16
+ 1795  df -h
+ 1796  docker image ls
+ 1797  docker image rmi 91299e85b9fc f04af1a51c7b 24098797812b c5876e08e26b 6d42060f7226 9ea16b23a89a dbe7dc0cd802 8a636eed72a7 493fd0ea03a1 66b501b6d8f0 f70844337527 986ffbc80a7b 
+ 1798  docker image ls
+ 1799  docker image rmi --force 91299e85b9fc  f04af1a51c7b 3402698ebe91
+ 1800  ssh k8s1
+ 1801  cd playbooks/
+ 1802  ll
+ 1803  vi pb.install_filebeat.yml 
+ 1804  ssh k8s1
+ 1805  ll
+ 1806  ansible-playbook pb.install_filebeat.yml -K
+ 1807  vi pb.install_filebeat.yml 
+ 1808  ansible-playbook pb.install_filebeat.yml -K
+ 1809  mkdir templates
+ 1810  cd ..
+ 1811  ll
+ 1812  cd scripts/
+ 1813  ll
+ 1814  ./copy_filebeat.sh 
+ 1815  ls /tmp
+ 1816  df -h
+ 1817  scp student@k8s2:/tmp/filebeat-7.4.2-amd64.deb /tmp/filebeat-7.4.2-amd64.deb
+ 1818  cd ..
+ 1819  ssh k8s2
+ 1820  ssh k8s3
+ 1821  scp student@k8s3:/tmp/filebeat-7.4.2-amd64.deb /tmp/filebeat-7.4.2-amd64.deb
+ 1822  cd playbooks/
+ 1823  ansible-playbook pb.install_filebeat.yml 
+ 1824  ansible-playbook pb.install_filebeat.yml -K
+ 1825  ssh k8s2
+ 1826  ansible-playbook pb.install_filebeat.yml -K
+ 1827  scp student@k8s1:/etc/filebeat/filebeat.yml ./templates/
+ 1828  ssh k8s1
+ 1829  scp student@k8s1:filebeat.yml ./templates/
+ 1830  cd templates
+ 1831  vi filebeat.yml 
+ 1832  mv filebeat.yml filebeat.yml.j2
+ 1833  ll
+ 1834  cd ..
+ 1835  vi pb.install_filebeat.yml 
+ 1836  ansible-playbook pb.install_filebeat.yml 
+ 1837  ansible-playbook pb.install_filebeat.yml -K
+ 1838  ssh k8s1
+ 1839  ssh k8s2
+ 1840  vi pb
+ 1841  vi pb.install_filebeat.yml 
+ 1842  ansible-playbook pb.install_filebeat.yml 
+ 1843  ansible-playbook pb.install_filebeat.yml -K 
+ 1844  vi pb.install_filebeat.yml 
+ 1845  ansible-playbook pb.install_filebeat.yml -K 
+ 1846  vi pb.install_filebeat.yml 
+ 1847  ansible-playbook pb.install_filebeat.yml -K 
+ 1848  cp pb.install_filebeat.yml pb.manual_install_tasks.yml
+ 1849  vi pb.manual_install_tasks.yml 
+ 1850  vi pb.install_filebeat.yml 
+ 1851  ssh k8s1
+ 1852  ssh k8s2
+ 1853  ssh k8s3
+ 1854  ansible-playbook pb.install_filebeat.yml -K
+ 1855  history
+ 1856  cd lab16
+ 1857  ll
+ 1858  cd playbooks/
+ 1859  ansible-playbook pb.install_filebeat.yml 
+ 1860  ansible-playbook pb.install_filebeat.yml -K
+ 1861  cd ..
+ 1862  code .
+ 1863  cd ..
+ 1864  ll
+ 1865  code .
+ 1866  ls /tmp
+ 1867  scp student@k8s1:metricbeat-7.4.2-amd64.deb /tmp/metricbeat-7.4.2-amd64.deb
+ 1868  ssh student@k8s1
+ 1869  scp student@k8s1:metricbeat-7.4.2-amd64.deb /tmp/metricbeat-7.4.2-amd64.deb
+ 1870  ssh student@k8s1
+ 1871  scp student@k8s1:metricbeat.yml /home/student/labs/lab17/playbooks/templates/metricbeat.yml.j2
+ 1872  ll
+ 1873  pwd
+ 1874  cd lab17
+ 1875  ll
+ 1876  cd playbooks/
+ 1877  ll
+ 1878  ansible-playbook pb.install_metricbeat.yml 
+ 1879  ansible-playbook pb.install_metricbeat.yml -K 
+ 1880  ssh k8s1
+ 1881  ssh k8s2
+ 1882  ansible-playbook pb.install_metricbeat.yml -K 
+ 1883  cd labs/lab17/playbooks/
+ 1884  ansible-playbook pb.install_metricbeat.yml -K
+ 1885  cd lab17
+ 1886  ssh k8s1
+ 1887  ssh k8s2
+ 1888  cd playbooks
+ 1889  ansible-playbook pb.install_metricbeat.yml -K
+ 1890  ssh k8s1
+ 1891  cd ~/labs/lab19/net_inventory/
+ 1892  git diff run.py
+ 1893  git diff net_inventory/frontend/views.py
+ 1894  git diff net_inventory/shared/setup.py
+ 1895  git diff app.py
+ 1896  git diff net-inventory-config.yml
+ 1897  git diff requirements.txt
+ 1898  clear
+ 1899  ping csr1kv1
+ 1900  clear
+ 1901  clear
+ 1902  ping k8s1
+ 1903  ssh k8s1
+ 1904  ssh k8s3
+ 1905  cd labs/lab13/
+ 1906  ls
+ 1907  cat fi
+ 1908  ls
+ 1909  vim vars/asa1/policies.yml 
+ 1910  ansible-playbook firewalls.yml
+ 1911  ssh asa1
+ 1912  cat outputs/configs/asa1 
+ 1913  exit
+ 1914  vim labs/lab13/ansible.cfg 
+ 1915  vim labs/lab13/hosts 
+ 1916  vim labs/lab13/vars/
+ 1917  exit
+ 1918  sudo systemctl status kibana
+ 1919  sudo systemctl restart kibana
+ 1920  exit
+ 1921  ls
+ 1922  clear
+ 1923  ssh asa1
+ 1924  ssh k8s1
+ 1925  ssh k8s3
+ 1926  ssh csr1
+ 1927  ssh csr1kv1
+ 1928  ls
+ 1929  cd labs/
+ 1930  ls
+ 1931  cd lab14
+ 1932  ls
+ 1933  cd net_inventory_iac/
+ 1934  ls
+ 1935  cat iac/ansible/templates/firewalls.j2 
+ 1936  ls
+ 1937  cat iac/ansible/firewalls.yml 
+ 1938  cat iac/ansible/vars/asa1/policies.yml 
+ 1939  ls
+ 1940  cat iac/ansible/firewalls.yml 
+ 1941  ssh asa1
+ 1942  cd
+ 1943  ssh k8s3
+ 1944  ssh csr1kv1
+ 1945  ssh csr1kv2
+ 1946  ssh csr1kv3
+ 1947  ssh asa1
+ 1948  ssh csr1kv3
+ 1949  ssh csr1kv2
+ 1950  ssh csr1kv3
+ 1951  ssh csr1kv1
+ 1952  cd labs/25
+ 1953  cd labs/lab25
+ 1954  ls
+ 1955  tree
+ 1956  ls -alh
+ 1957  cd ..
+ 1958  cd lab25
+ 1959  cd ..
+ 1960  rmdir lab25
+ 1961  cd ..
+ 1962  docker network ls
+ 1963  cd labs/lab06
+ 1964  cat docker-compose.yml 
+ 1965  docker container ls
+ 1966  docker rm b4718219ceb9
+ 1967  docker rm b4718219ceb9 -f
+ 1968  clear
+ 1969  ls
+ 1970  history
+ 1971  clear
+ 1972  cd labs/lab12
+ 1973  ls -l
+ 1974  cd ..
+ 1975  cd lab13
+ 1976  ls -l
+ 1977  ls -l outputs/configs/
+ 1978  cat templates/firewalls.j2 
+ 1979  cd ..
+ 1980  cd lab14
+ 1981  cat /etc/hosts
+ 1982  ssh 192.168.10.20
+ 1983  history |grep ssh
+ 1984  ssh root@192.168.10.70
+ 1985  ls
+ 1986  cd labs/lab12
+ 1987  ls -al
+ 1988  cd test_env/
+ 1989  ls -
+ 1990  terraform plan
+ 1991  terraform apply
+ 1992  terraform destroy
+ 1993  exit
+ 1994  cd .kube/
+ 1995  ls
+ 1996  cat config 
+ 1997  kubectl version
+ 1998  scp config student@git.lab
+ 1999  scp config student@git.lab:config
+ 2000  exit
+ 2001  cd labs/
+ 2002  ls
+ 2003  cd lab24
+ 2004  ls
+ 2005  cd ..
+ 2006  cd lab23
+ 2007  ls
+ 2008  clear
+ 2009  cd ..
+ 2010  cd lab22
+ 2011  ls
+ 2012  ping k8s1
+ 2013  ping k8s2
+ 2014  ping k8s3
+ 2015  cd ..
+ 2016  ls lab22
+ 2017  ls lab23
+ 2018  ls lab24
+ 2019  ls
+ 2020  cd .dev/
+ 2021  ls
+ 2022  cat history >> history.old
+ 2023  cat history > history.old
+ 2024  history > history.old
